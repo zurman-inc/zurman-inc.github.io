@@ -1,13 +1,303 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Zurman AI</title>
+    <title>Zurman Inc — AI Consulting & Custom AI Solutions</title>
+    <meta
+      name="description"
+      content="Zurman Inc provides AI consulting and custom AI solution development: ML optimization, agentic experimentation, RAG systems, and AI-assisted mathematical discovery."
+    />
+
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --card: #111827;
+        --text: #e5e7eb;
+        --muted: #a7b0c0;
+        --line: rgba(255, 255, 255, 0.08);
+        --accent: #7dd3fc;
+        --accent2: #a78bfa;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        color: var(--text);
+        background: radial-gradient(1000px 600px at 10% 10%, rgba(167, 139, 250, 0.18), transparent 55%),
+          radial-gradient(900px 500px at 90% 15%, rgba(125, 211, 252, 0.16), transparent 55%),
+          var(--bg);
+        line-height: 1.6;
+      }
+
+      a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+
+      .wrap {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 56px 20px;
+      }
+
+      header {
+        padding: 24px 0 12px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: rgba(17, 24, 39, 0.6);
+        box-shadow: var(--shadow);
+        color: var(--muted);
+        font-size: 14px;
+        letter-spacing: 0.2px;
+      }
+
+      .dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 0 4px rgba(125, 211, 252, 0.08);
+      }
+
+      h1 {
+        font-size: clamp(34px, 4vw, 50px);
+        line-height: 1.1;
+        margin: 18px 0 10px;
+        letter-spacing: -0.02em;
+      }
+
+      .subhead {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 70ch;
+        margin: 0 0 22px;
+      }
+
+      .cta {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin: 20px 0 8px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        background: rgba(17, 24, 39, 0.75);
+        color: var(--text);
+        font-weight: 600;
+        box-shadow: var(--shadow);
+      }
+      .btn:hover { text-decoration: none; border-color: rgba(255,255,255,0.18); }
+
+      .btn.primary {
+        border: none;
+        background: linear-gradient(135deg, rgba(125, 211, 252, 0.95), rgba(167, 139, 250, 0.95));
+        color: #0b0f17;
+      }
+
+      main {
+        margin-top: 26px;
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 18px;
+      }
+
+      .card {
+        grid-column: span 12;
+        border: 1px solid var(--line);
+        background: rgba(17, 24, 39, 0.62);
+        border-radius: 18px;
+        padding: 18px 18px;
+        box-shadow: var(--shadow);
+      }
+
+      @media (min-width: 860px) {
+        .card.half { grid-column: span 6; }
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+      }
+
+      ul {
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: var(--text);
+      }
+
+      li { margin: 10px 0; }
+      li strong { color: #ffffff; }
+      .muted { color: var(--muted); }
+
+      footer {
+        margin-top: 34px;
+        padding-top: 16px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .contact {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      code.inline {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+          monospace;
+        font-size: 0.95em;
+        padding: 2px 6px;
+        border-radius: 8px;
+        border: 1px solid var(--line);
+        background: rgba(0, 0, 0, 0.25);
+        color: var(--text);
+      }
+    </style>
   </head>
+
   <body>
-    <h1>Zurman AI</h1>
-    <p>AI consulting and custom AI solution development.</p>
-    <p>Email: <a href="mailto:hello@zurman.ai">hello@zurman.ai</a></p>
+    <div class="wrap">
+      <header>
+        <div class="badge">
+          <span class="dot" aria-hidden="true"></span>
+          AI consulting • Custom solutions • Research-grade rigor
+        </div>
+
+        <h1>Zurman Inc — AI Solutions</h1>
+        <p class="subhead">
+          We help teams design, build, and deploy custom AI systems—from ML performance optimization to
+          agentic experimentation and RAG knowledge bases.
+        </p>
+
+        <div class="cta">
+          <a class="btn primary" href="mailto:zurman.inc@gmail.com?subject=AI%20Consulting%20Inquiry">
+            Email us
+          </a>
+          <a class="btn" href="#services">View services</a>
+        </div>
+
+        <p class="muted">
+          Contact: <a href="mailto:zurman.inc@gmail.com">zurman.inc@gmail.com</a>
+          <!-- Alternative:
+          <span class="muted"> • </span><a href="mailto:hello@zurman.ai">hello@zurman.ai</a>
+          -->
+        </p>
+      </header>
+
+      <main>
+        <section id="services" class="grid">
+          <div class="card half">
+            <h2>Services</h2>
+            <ul>
+              <!--li>
+                <strong>ML performance via graph theory + RL</strong><br />
+                Graph-based representations and RL-driven optimization to improve accuracy, robustness,
+                and generalization on real-world data.
+              </li-->
+
+              <li>
+             <strong>ML models improved through advanced mathematics and reinforcement learning.</strong>
+             </li>
+
+              <li>
+                <strong>Automated “model-finding” agents</strong><br />
+                Agentic workflows for model selection, hyperparameter tuning, and architecture/search—
+                faster convergence under compute and latency constraints.
+              </li>
+              <li>
+                <strong>RAG systems for technical knowledge bases</strong><br />
+                High-precision retrieval with ontology/metadata design, citation-aware synthesis, and
+                evaluation pipelines.
+              </li>
+              <li>
+                <strong>AI-assisted business solution discovery</strong><br />
+                Tool-augmented workflows (search + symbolic reasoning + verification) to explore and
+                validate conjectures with reproducible evidence.
+              </li>
+            </ul>
+          </div>
+
+          <div class="card half">
+            <h2>How we work</h2>
+            <ul>
+              <li><strong>Fast scoping</strong>: 30–60 min discovery call → clear success criteria.</li>
+              <li><strong>Prototype first</strong>: a working baseline early, then iterate with metrics.</li>
+              <li><strong>Production-ready</strong>: testing, monitoring, cost controls, and handoff docs.</li>
+              <li><strong>Transparent deliverables</strong>: repos, runbooks, and reproducible experiments.</li>
+            </ul>
+
+            <p class="muted" style="margin-top: 14px;">
+              Typical deliverables include: <code class="inline">baseline model + eval</code>,
+              <code class="inline">agent workflow</code>, <code class="inline">RAG pipeline</code>,
+              <code class="inline">deployment plan</code>.
+            </p>
+          </div>
+        </section>
+
+        <section class="grid">
+          <div class="card">
+            <h2>Let’s talk</h2>
+            <p class="muted" style="margin: 0;">
+              Send a short note with your goal, data constraints, and timeline.
+              We’ll reply with an approach and next steps.
+            </p>
+            <div class="cta" style="margin-top: 14px;">
+              <a class="btn primary" href="mailto:zurman.inc@gmail.com?subject=Project%20Inquiry&body=Hi%20Zurman-Inc%2C%0A%0AI%27d%20like%20help%20with%3A%20%5Bbrief%20description%5D%0AData%2Fconstraints%3A%20%5Bnotes%5D%0ATimeline%3A%20%5Bdates%5D%0A%0AThanks!">
+                Start an email
+              </a>
+              <a class="btn" href="#top" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">
+                Back to top
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="contact">
+          <span>© <span id="year"></span> Zurman Inc</span>
+          <span class="muted">•</span>
+          <a href="mailto:zurman.inc@gmail.com">zurman.inc@gmail.com</a>
+        </div>
+        <span class="muted">Built with plain HTML/CSS.</span>
+      </footer>
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
