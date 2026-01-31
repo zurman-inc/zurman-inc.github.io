@@ -6,7 +6,7 @@
     <title>Zurman Inc — AI Consulting & Custom AI Solutions</title>
     <meta
       name="description"
-      content="Zurman Inc provides AI consulting and custom AI solution development: ML optimization, agentic experimentation, RAG systems, and AI-assisted mathematical discovery."
+      content="Zurman Inc provides AI consulting and custom AI solution development: ML model optimization, agentic experimentation, RAG systems, and AI-assisted mathematical discovery."
     />
 
     <style>
@@ -48,6 +48,7 @@
       }
 
       header {
+        position: relative;
         padding: 24px 0 12px;
       }
 
@@ -185,6 +186,37 @@
         background: rgba(0, 0, 0, 0.25);
         color: var(--text);
       }
+
+      /* Top-right brand image */
+      .brand-mark {
+        position: absolute;
+        top: 6px;
+        right: 0;
+        width: 260px;
+        max-width: min(38vw, 260px);
+        height: auto;
+        border-radius: 14px;
+        border: 1px solid var(--line);
+        box-shadow: var(--shadow);
+        background: rgba(17, 24, 39, 0.35);
+      }
+
+      /* Reserve space so text doesn't overlap the image on wider screens */
+      @media (min-width: 860px) {
+        header { padding-right: 290px; }
+      }
+
+      /* On small screens, stack the image and center it */
+      @media (max-width: 859px) {
+        .brand-mark {
+          position: static;
+          display: block;
+          margin: 16px auto 0;
+          width: min(360px, 92%);
+          max-width: 92%;
+        }
+      }
+
     </style>
   </head>
 
@@ -196,24 +228,12 @@
           AI consulting • Custom solutions • Research-grade rigor
         </div>
 
+        <img class="brand-mark" src="zurman_ai.png" alt="Zurman AI network logo" loading="lazy" />
+
         <h1>Zurman Inc — AI Solutions</h1>
         <p class="subhead">
-          We help teams design, build, and deploy custom AI systems—from ML performance optimization to
-          agentic experimentation and RAG knowledge bases.
-        </p>
-
-        <div class="cta">
-          <a class="btn primary" href="mailto:zurman.inc@gmail.com?subject=AI%20Consulting%20Inquiry">
-            Email us
-          </a>
-          <a class="btn" href="#services">View services</a>
-        </div>
-
-        <p class="muted">
-          Contact: <a href="mailto:zurman.inc@gmail.com">zurman.inc@gmail.com</a>
-          <!-- Alternative:
-          <span class="muted"> • </span><a href="mailto:hello@zurman.ai">hello@zurman.ai</a>
-          -->
+          We help teams design, build, and deploy custom AI systems—from ML modeling and performance optimization to
+          agentic experimentation and RAG knowledge bases. 
         </p>
       </header>
 
@@ -294,6 +314,14 @@
         </div>
         <span class="muted">Built with plain HTML/CSS.</span>
       </footer>
+
+<!--a class="btn primary"
+   href="mailto:zurman.inc@gmail.com?subject=AI%20Consulting%20Inquiry"
+   target="_blank" rel="noopener">
+  Email us
+</a-->
+
+      
     </div>
 
     <script>
