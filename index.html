@@ -230,12 +230,35 @@
 
         <img class="brand-mark" src="zurman_ai.png" alt="Zurman AI network logo" loading="lazy" />
 
-        <h1>Zurman Inc — AI Solutions</h1>
+        <h1>Zurman Inc - AI Solutions</h1>
         <p class="subhead">
           We help teams design, build, and deploy custom AI systems—from ML modeling and performance optimization to
           agentic experimentation and RAG knowledge bases. 
         </p>
       </header>
+
+
+
+
+            <div class="cta">
+              <a class="btn primary" href="mailto:zurman.inc@gmail.com?subject=AI%20Consulting%20Inquiry">
+                Email us
+              </a>
+              <a class="btn" href="#services">View services</a>
+            </div>
+
+            <p class="muted">
+              Contact: <a href="mailto:zurman.inc@gmail.com">zurman.inc@gmail.com</a>
+              <!-- Alternative:
+              <span class="muted"> • </span><a href="mailto:hello@zurman.ai">hello@zurman.ai</a>
+              -->
+
+
+
+
+
+
+
 
       <main>
         <section id="services" class="grid">
@@ -324,8 +347,11 @@
       
     </div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+<script>
+  const startYear = 2009;
+  const currentYear = new Date().getFullYear();
+  document.getElementById("year").textContent =
+    currentYear > startYear ? `${startYear}-${currentYear}` : `${startYear}`;
+</script>
   </body>
 </html>
